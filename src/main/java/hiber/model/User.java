@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.swing.text.html.Option;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
    @Id
@@ -18,10 +18,10 @@ public class User {
    private String lastName;
 
    @Column(name = "email")
-   @JoinColumn(name = "car_id")
    private String email;
 
    @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "car_id")
    private Car car;
 
    public User() {}
